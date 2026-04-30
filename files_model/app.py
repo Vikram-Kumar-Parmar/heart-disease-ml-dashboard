@@ -4,7 +4,17 @@ import joblib
 import pandas as pd
 
 # Load artifacts
-model = joblib.load("heart_model.pkl")
+#-------------------------
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, "heart_model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+columns = joblib.load(os.path.join(BASE_DIR, "columns.pkl"))
+
+#-------------------------
+
 scaler = joblib.load("scaler.pkl")
 columns = joblib.load("columns.pkl")
 
